@@ -1,0 +1,152 @@
+/*
+ * BLACKHOLE THEME - Discord Custom Theme
+ * A minimal white-on-black theme using Work Sans
+ * Created for Vencord / BetterDiscord
+ * Easily customizable - see CSS variables and examples below
+ */
+
+/* ===================== CUSTOMIZATION ===================== */
+:root {
+  --font-family-main: 'Work Sans', sans-serif;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #121212;
+
+  --text-primary: #ffffff;
+  --text-secondary: #dddddd;
+
+  --accent-color: #ffffff;
+  --button-bg: #1a1a1a;
+  --button-hover: #2a2a2a;
+
+  --border-color: #ffffff22;
+  --highlight-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+
+  /* === Extra Options for Customization === */
+  --mention-color: #ffffff;
+  --mention-bg: #222222;
+  --scrollbar-thumb: #2e2e2e;
+  --scrollbar-thumb-hover: #3a3a3a;
+}
+
+/*
+ * To customize:
+ * - Change --accent-color for hover glows
+ * - Modify --button-bg and --button-hover for button styling
+ * - Adjust --highlight-shadow for shadow strength
+ */
+
+/* ===================== IMPORT FONT ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
+/* ===================== BASE ===================== */
+body, .text-sm-medium, .text-md-normal, .text-lg-medium {
+  font-family: var(--font-family-main) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===================== BACKGROUNDS ===================== */
+.theme-dark, .appMount-2yBXZl, .app-2CXKsg, .container-1eFtFS {
+  background-color: var(--bg-primary) !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.container-1NXEtd, .sidebar-2K8pFh, .chat-2ZfjoI,
+.membersWrap-3NUR2t, .content-1jQy2l {
+  background-color: var(--bg-secondary) !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.scroller-2FKFPG, .content-3at_AU {
+  background-color: var(--bg-tertiary) !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* ===================== TEXT ===================== */
+.markup-2BOw-j, .channelName-3KPsGw, .username-1A8OIy,
+.name-3Uvkvr, .title-31SJ6t, .defaultColor-1EVLSt {
+  color: var(--text-primary) !important;
+  text-shadow: var(--highlight-shadow), 1px 1px 2px #000000cc;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* ===================== BUTTONS ===================== */
+.button-38aScr, .lookFilled-1Gx00P, .button-1EGGcP {
+  background-color: var(--button-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  text-shadow: var(--highlight-shadow);
+}
+
+.button-38aScr:hover, .lookFilled-1Gx00P:hover, .button-1EGGcP:hover {
+  background-color: var(--button-hover) !important;
+  box-shadow: var(--highlight-shadow);
+}
+
+/* ===================== LINES & DIVIDERS ===================== */
+.divider-3gKybi, .separator-2I32lJ, .sectionDivider-189lqb {
+  background-color: var(--text-primary) !important;
+  opacity: 0.15;
+  height: 1px;
+}
+
+/* ===================== ICONS ===================== */
+.icon-2xnN2Y, svg {
+  color: var(--accent-color) !important;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+  transition: filter 0.2s ease-in-out;
+}
+
+.icon-2xnN2Y:hover, svg:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+/* ===================== INPUTS ===================== */
+.inputDefault-3FGxgL, .searchBar-3TnChZ {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: var(--highlight-shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.inputDefault-3FGxgL:focus, .searchBar-3TnChZ:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+/* ===================== MENTIONS ===================== */
+.mention {
+  background-color: var(--mention-bg) !important;
+  color: var(--mention-color) !important;
+  box-shadow: var(--highlight-shadow);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ===================== FIX: UI OVERLAY BUG ===================== */
+.layer-86YKbF[style*="z-index"] {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* ===================== SCROLLBARS ===================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  transition: background 0.2s ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
